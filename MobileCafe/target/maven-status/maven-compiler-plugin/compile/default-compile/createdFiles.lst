@@ -1,0 +1,6 @@
+com\mobile\model\Login.class
+com\mobile\model\Product.class
+com\mobile\controller\LoginController.class
+com\mobile\controller\ProductController.class
+com\mobile\dao\ProductDAO.class
+com\mobile\model\Register.class
