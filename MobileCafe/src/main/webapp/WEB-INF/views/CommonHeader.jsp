@@ -23,7 +23,8 @@ input[type=text]:focus {
 }
 </style>
 </head>
-<body style="background-color:#D3D3D3;">
+
+<body background=" resources/admin1.jpg">
 
 
   <div class="container">
@@ -31,7 +32,8 @@ input[type=text]:focus {
   
 </div>
 <div class="row" align="right">
-    
+<a href="Admin">
+  <button  type="button" style="background-color:#000000; color:#FFFFFF" class="btn btn-default btn-xs" >Admin</button></a>   
  <a href="Login">
  <button type="button" style="background-color:#000000; color:#FFFFFF" class="btn btn-default btn-xs" >Login</button></a>
  <a href="Register">

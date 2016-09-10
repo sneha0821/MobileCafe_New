@@ -16,7 +16,7 @@
 					<img src="resources/login1.png"/>
 					</div>
 					<div class="panel-body">
-						<form:form action="#" method="POST" commandName="Login">
+						<form:form action="Login" method="POST" commandName="Login">
 							<form role="form" >
 							<fieldset>
 								<div class="row">
@@ -31,7 +31,7 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-user"></i>
 												</span> 
-												<input class="form-control" placeholder="Username" name="loginname" type="text" autofocus>
+												<form:input path="uname" class="form-control" placeholder="Username" name="loginname" type="text"/>
 											</div>
 										</div>
 										<div class="form-group">
@@ -39,7 +39,7 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-lock"></i>
 												</span>
-												<input class="form-control" placeholder="Password" name="password" type="password" value="">
+												<form:input path="pwd" class="form-control" placeholder="Password" name="password" type="password" value=""/>
 											</div>
 										</div>
 										<div class="form-group">
