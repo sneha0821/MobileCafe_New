@@ -17,8 +17,9 @@
 <br/>
 <div class="container" style="margin-top:80px" margin-bottom="100px">
 
-        <div class="row centered-form">	
-        <div class="col-xs-12 col-sm-12 col-md-5 col-sm-offset-2 col-md-offset-4">
+<div class="row">
+<div class="span12">	
+        <div class="col-xs-12 col-sm-10 col-md-5 col-sm-offset-2 col-md-offset-4">
         	<div class="panel panel-default">
         		<div class="panel-heading">
 			    		<h3 class="panel-title">Please sign up <small>It's free!</small></h3>
@@ -88,6 +89,6 @@
 	    		
     		</div>
     		
-    
+
     		<br/>
         	<jsp:include page="CommonFooter.jsp"></jsp:include>

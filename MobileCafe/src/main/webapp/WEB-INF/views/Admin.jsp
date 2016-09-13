@@ -64,20 +64,20 @@ input[type=text]:focus {
  
     <ul class="nav navbar-nav">
      
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Products <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="">Add</a></li>
+          <li><a href="AddProduct">Add</a></li>
           <li><a href="#">View</a></li>
         </ul>
       </li>
         
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Category <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="AddCategory">Add</a></li>
           <li><a href="ViewCategory">View</a></li>
         </ul>
 
- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Seller <span class="caret"></span></a>
+ <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Seller <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="AddSeller">Add</a></li>
           

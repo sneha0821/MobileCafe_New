@@ -1,15 +1,50 @@
 package com.mobile.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 
+import org.springframework.web.multipart.MultipartFile;
+
+@Entity
 public class Product 
 {
+	@Id
 	private String pid;
+	@Column
 	private String pname;
+	@Column
 	private String psupid;
+	@Column
+	private String pcatid;
+	@Column
 	private String pdescrp;
+	@Column
 	private String pcatgry;
+	@Column
 	int pquan;
+	@Column
 	int pcost;
+	@Transient
+	MultipartFile pimage;
 	
+	public MultipartFile getPimage() {
+		return pimage;
+	}
+	public void setPimage(MultipartFile pimage) {
+		this.pimage = pimage;
+	}
+	public Product()
+	{
+	
+	}
+	
+	public String getPcatid() {
+		return pcatid;
+	}
+	public void setPcatid(String pcatid) {
+		this.pcatid = pcatid;
+	}
 	public String getPid() {
 		return pid;
 	}
@@ -52,16 +87,7 @@ public class Product
 	public void setPcost(int pcost) {
 		this.pcost = pcost;
 	}
-	public Product(String pid, String pname, String psupid, String pdescrp, String pcatgry, int pquan, int pcost) 
-	{
-		super();
-		this.pid = pid;
-		this.pname = pname;
-		this.psupid = psupid;
-		this.pdescrp = pdescrp;
-		this.pcatgry = pcatgry;
-		this.pquan = pquan;
-		this.pcost = pcost;
-	}
+	
+
 	
 }

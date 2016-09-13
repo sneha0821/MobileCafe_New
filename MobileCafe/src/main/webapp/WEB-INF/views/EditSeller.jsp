@@ -20,10 +20,10 @@
       </p>
 
       <p><label for="year" style="text-align: justify; font-size: medium; font-family: Script MT Bold; color:silver;">Seller EmailID:</label>
-         <form:input type="text" path="cemailid"/>
+         <form:input type="text" path="semailid"/>
          
                <p><label for="year" style="text-align: justify; font-size: medium; font-family: Script MT Bold; color:silver;">Seller MobileNum:</label>
-         <form:input type="text" path="cmobno"/>
+         <form:input type="text" path="smobno"/>
       </p>
 
       <p><input type="submit" value="Update Catagory"/></p>

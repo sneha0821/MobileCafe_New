@@ -11,10 +11,8 @@ public class Category
 	String cname;
 	@Column
 	String cdesc;
-	
 	public Category()
 	{
-		
 	}
 	public int getCid() {
 		return cid;

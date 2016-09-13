@@ -1,12 +1,9 @@
 package com.mobile.controller;
 import com.google.gson.Gson;
-import com.mobile.dao.CategoryDAO;
-import com.mobile.model.Category;
-
-//import java.util.*;
 import java.util.ArrayList;
 
-//import com.mobile.model.Category;
+import com.mobile.dao.CategoryDAO;
+import com.mobile.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,8 +64,8 @@ public class CategoryController
 	public ModelAndView editcategory(@RequestParam("id")int cid,Model m) 
 	{
 		//ModelAndView mv=new ModelAndView("editcatagory","catagory",new Catagory());
-		Category s=cdao.showCategory(cid);
-		m.addAttribute("EditCategory1",s);
+		Category c=cdao.showCategory(cid);
+		m.addAttribute("EditCategory1",c);
 		ModelAndView mv=new ModelAndView("EditCategory","EditCategory",new Category());
 		return mv;
 

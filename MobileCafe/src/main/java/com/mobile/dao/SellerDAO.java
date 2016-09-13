@@ -50,7 +50,7 @@ public class SellerDAO
 		return showsell;
 	}
 	
-	public Seller showSeller(int showsell)
+	public Seller showSeller(String showsell)
 	{
 		Session session = sessionFactory.openSession();
 	      Transaction tx = session.getTransaction();
@@ -74,7 +74,7 @@ public class SellerDAO
 			session.update(s);
 		tx.commit();
 	}
-	public void deleteSeller(int delselid)
+	public void deleteSeller(String delselid)
 	{
 		Session session = sessionFactory.openSession();
 	      Transaction tx = session.getTransaction();

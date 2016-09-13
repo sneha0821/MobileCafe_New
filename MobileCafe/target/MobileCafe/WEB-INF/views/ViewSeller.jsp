@@ -29,8 +29,8 @@ Search:<input type=text placeholder="Search" ng-model="searchText"/>
  </tr>
  <tr class="success" ng-repeat="sel in Seller|filter:searchText">
  <td>{{sel.sid}}</td><td>{{sel.sname}}</td><td>{{sel.semailid}}</td><td>{{sel.smobno}}</td>
- <td><a href="EditSeller?id={{sid=sel.sid}}" name="edit" value="Edit">Edit</a></td>
-<td><a href="delSeller?id={{sid=sel.sid}}" value="Delete" name="delete" >Delete</a>]</td></tr>
+ <td><a href="EditSeller?id={{sel.sid}}" name="edit" value="Edit">Edit</a></td>
+<td><a href="delSeller?id={{sel.sid}}" value="Delete" name="delete" >Delete</a>]</td></tr>
 </table>
 </div>
 </div>

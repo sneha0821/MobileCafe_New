@@ -18,7 +18,7 @@ public class CategoryDAO
 	
 	public void addCategory(Category c)
 	{
-		System.out.println("Category Product DAO");
+		System.out.println("Category DAO");
 		System.out.println(c.getCid());
 		System.out.println(c.getCname());
 		try
