@@ -67,7 +67,7 @@ input[type=text]:focus {
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage Products <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="AddProduct">Add</a></li>
-          <li><a href="#">View</a></li>
+          <li><a href="ViewProduct">View</a></li>
         </ul>
       </li>
         
@@ -90,8 +90,13 @@ input[type=text]:focus {
           <li><a href="#">View</a></li>
         </ul>
       </li>
+  
   </div>
 </nav>
+<div align="center">
+    <img  src="resources/eleventh.jpg" width="500" height="200"/>
+    </div>
+    <br/><br/><br/>	
 </div>
 </body>
 </html>

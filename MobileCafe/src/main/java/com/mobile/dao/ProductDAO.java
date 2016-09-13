@@ -6,12 +6,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gson.Gson;
 import com.mobile.model.Category;
 import com.mobile.model.Product;
 import com.mobile.model.Seller;
 
+@Transactional
 @Repository
 public class ProductDAO
 {
@@ -21,17 +23,16 @@ public class ProductDAO
 	
 	public void addProduct(Product p)
 	{
-		System.out.println("Product DAO");
-		System.out.println(p.getPid());
+	
+		
 		System.out.println(p.getPname());
 		try
 		{
 		Session session=sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
-		//tx.begin();
 		session.save(p);
-		session.flush();
 		tx.commit();
+		session.flush();
 		session.close();
 		}
 		catch(Exception e)
@@ -49,6 +50,7 @@ public class ProductDAO
 		tx.begin();
 		List showprod=session.createQuery("from Product").list();
 		tx.commit();
+		session.flush();
 		session.close();
 		return showprod;
 	}
@@ -59,8 +61,10 @@ public class ProductDAO
 	      Transaction tx = session.getTransaction();
 	      tx.begin();
 	      Product p=(Product)session.get(Product.class,showprod);
-	                 tx.commit();
-	         return p;
+	      tx.commit();
+	      session.flush();
+	    session.close();
+	      return p;
 		
 	}
 	
@@ -74,12 +78,10 @@ public class ProductDAO
 		tx.commit();
 		session.flush();
 		session.clear();
-		session.close();
 		Gson g=new Gson();
 		String[] cat=new String[2];
 		cat[0]=g.toJson(showcat);
 		cat[1]=g.toJson(showsel);
-		
 		session.close();
 		return cat;
 		
@@ -87,24 +89,41 @@ public class ProductDAO
 	
 	public void editProduct(Product editprod)
 	{
+		System.out.println("0");
 		Session s=sessionFactory.openSession();
+		System.out.println("1");
 		Transaction tx=s.getTransaction();
+		System.out.println("2");
 		tx.begin();
-		   Product p=(Product)s.get(Category.class,editprod.getPid());
-		   p.setPname(editprod.getPname());
-		   p.setPname(editprod.getPname());
+		System.out.println("3");
+		   Product p=(Product)s.get(Product.class,editprod.getPid());
+		   System.out.println("4");
+		   p.setPquan(editprod.getPquan());
+		   System.out.println("5");
+		   p.setPcost(editprod.getPcost());
+		   System.out.println("6");
 		   //need to add some more code
 			s.update(p);
+			System.out.println("7");
 		tx.commit();
+		System.out.println("8");
+		s.close();
+		
 	}
-	public void deleteProduct(int delprodid)
+	public void deleteProduct(String delprodid)
 	{
+		System.out.println("0");
 		Session session = sessionFactory.openSession();
+		System.out.println("1");
 	      Transaction tx = session.getTransaction();
+	      System.out.println("2");
 	      tx.begin();
+	      System.out.println("3");
 	        Product p=(Product)session.get(Product.class,delprodid);
+	        System.out.println("3");
 	        System.out.println(p);
 	         session.delete(p); 
+	         System.out.println("3");
 	         tx.commit();
 	}
 	

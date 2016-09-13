@@ -15,6 +15,13 @@ public class LoginController
 	public LoginController() {
 		System.out.println("at Controller");
 	}
+	
+	@RequestMapping("/")
+	public String showHome()
+	{
+		return "index";
+	}
+	
 	@RequestMapping("/AboutUs")
 	public String showAboutUs() 
 	{

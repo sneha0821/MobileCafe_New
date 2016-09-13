@@ -14,13 +14,12 @@ public class Product
 	@Column
 	private String pname;
 	@Column
-	private String psupid;
+	private String sid;
 	@Column
-	private String pcatid;
+	private String cid;
 	@Column
-	private String pdescrp;
-	@Column
-	private String pcatgry;
+	private String pdesc;
+	
 	@Column
 	int pquan;
 	@Column
@@ -28,22 +27,37 @@ public class Product
 	@Transient
 	MultipartFile pimage;
 	
+	
+	public Product()
+	{
+	
+	}
+	
 	public MultipartFile getPimage() {
 		return pimage;
 	}
 	public void setPimage(MultipartFile pimage) {
 		this.pimage = pimage;
 	}
-	public Product()
-	{
+
 	
+	public String getSid() {
+		return sid;
 	}
-	
-	public String getPcatid() {
-		return pcatid;
+	public void setSid(String sid) {
+		this.sid = sid;
 	}
-	public void setPcatid(String pcatid) {
-		this.pcatid = pcatid;
+	public String getCid() {
+		return cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+	public String getPdesc() {
+		return pdesc;
+	}
+	public void setPdesc(String pdesc) {
+		this.pdesc = pdesc;
 	}
 	public String getPid() {
 		return pid;
@@ -57,24 +71,8 @@ public class Product
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public String getPsupid() {
-		return psupid;
-	}
-	public void setPsupid(String psupid) {
-		this.psupid = psupid;
-	}
-	public String getPdescrp() {
-		return pdescrp;
-	}
-	public void setPdescrp(String pdescrp) {
-		this.pdescrp = pdescrp;
-	}
-	public String getPcatgry() {
-		return pcatgry;
-	}
-	public void setPcatgry(String pcatgry) {
-		this.pcatgry = pcatgry;
-	}
+	
+
 	public int getPquan() {
 		return pquan;
 	}

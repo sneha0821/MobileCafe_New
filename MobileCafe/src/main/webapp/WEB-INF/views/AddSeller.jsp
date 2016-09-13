@@ -2,7 +2,9 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <jsp:include page="Admin.jsp"></jsp:include>
-
+<div align="Center">
+<h3>Add a Seller</h3>
+<br/><br/>
 <form:form action="AddSeller" method="POST" commandName="AddSeller1">
 
   <Label>Seller ID:</Label><form:input path="sid" />
@@ -19,5 +21,5 @@
 <br/>
 	<input type="Submit" value="Add"/>
 </form:form>
-
+</div>
 <jsp:include page="CommonFooter.jsp"></jsp:include>

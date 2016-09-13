@@ -4,12 +4,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,13 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.Gson;
-import com.mobile.dao.CategoryDAO;
 import com.mobile.dao.ProductDAO;
-import com.mobile.model.Category;
 import com.mobile.model.Product;
-import com.mobile.model.Seller;
+
 
 @Controller
 public class ProductController 
@@ -44,25 +39,27 @@ public class ProductController
 	
 
 	@RequestMapping(value="/AddProduct",method=RequestMethod.GET)
-	public ModelAndView showCategory(Product addprod,Model m)
+	public ModelAndView addProduct(Model m)
 	{
 		String[] s=pdao.showcatseller();
 		System.out.println(s[0]);
 		m.addAttribute("catlist",s[0]);
 		m.addAttribute("selllist",s[1]);		
-		ModelAndView mv=new ModelAndView("AddProduct","Product",new Product());
+		ModelAndView mv=new ModelAndView("AddProduct","prdt",new Product());
 		return mv;
 
 	
 	}
 	
 
-	@RequestMapping(value="/addproduct",method=RequestMethod.POST)
-	public String addproduct(@ModelAttribute("prdt")Product prdt, HttpServletRequest request,RedirectAttributes attributes) 
+	@RequestMapping(value="/AddProduct",method=RequestMethod.POST)
+	public ModelAndView addproduct(@ModelAttribute("prdt")Product prdt, HttpServletRequest request,RedirectAttributes attributes,Model m)
 	{
+		System.out.println("Controller called");
+		
 		System.out.println(prdt.getPid());
 		pdao.addProduct(prdt);
-		
+	
 		String path="D:\\Chandru\\MobileCafe\\src\\main\\webapp\\myfiles\\";
 		path=path+String.valueOf(prdt.getPid())+".jpg";
 		System.out.println(path);
@@ -91,7 +88,10 @@ public class ProductController
 			System.out.println("File is Empty not Uploaded");
 			
 		}
-		return "product";
+		m.addAttribute("list",getdata());
+		ModelAndView mv=new ModelAndView("ViewProduct","Product",new Product());
+		return mv;
+ 
 	
 	}
 	
@@ -99,10 +99,7 @@ public class ProductController
 	public ModelAndView viewProduct1(Model m)
 	{
 	
-		ArrayList list=(ArrayList)pdao.showProduct();
-		Gson gson = new Gson();
-		String jsonInString = gson.toJson(list);
-		m.addAttribute("list",jsonInString);
+		m.addAttribute("list",getdata());
 		ModelAndView mv=new ModelAndView("ViewProduct","Product",new Product());
 		return mv;
 	}
@@ -113,6 +110,7 @@ public class ProductController
 	{
 	//ModelAndView mv=new ModelAndView("editcatagory","catagory",new Catagory());
 		Product p=pdao.showProduct(pid);
+	
 		m.addAttribute("EditProduct1",p);
 		ModelAndView mv=new ModelAndView("EditProduct","EditProduct",new Product());
 		return mv;
@@ -124,17 +122,18 @@ public class ProductController
 	public ModelAndView editproduct(Product typepro,Model m) 
 	{
 		pdao.editProduct(typepro);
-		//m.addAttribute("list",getdata());
+		m.addAttribute("list",getdata());
 		ModelAndView mv=new ModelAndView("ViewProduct","Product",new Product());
 		return mv;
 
 	}
 
 	@RequestMapping(value="/delProduct",method=RequestMethod.GET)
-	public ModelAndView DeleteProduct(@RequestParam("id")int pid,Model m)
+	public ModelAndView DeleteProduct(@RequestParam("id")String pid,Model m)
+	
 	{
 		pdao.deleteProduct(pid);
-		//m.addAttribute("list",getdata());
+		m.addAttribute("list",getdata());
 		ModelAndView mv=new ModelAndView("ViewProduct","ViewProduct",new Product());
 		return mv;
 	}

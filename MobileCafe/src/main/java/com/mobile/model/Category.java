@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Category
 {
 	@Id
-	int cid;
+	String cid;
 	@Column
 	String cname;
 	@Column
@@ -14,12 +14,15 @@ public class Category
 	public Category()
 	{
 	}
-	public int getCid() {
+	
+	public String getCid() {
 		return cid;
 	}
-	public void setCid(int cid) {
+
+	public void setCid(String cid) {
 		this.cid = cid;
 	}
+
 	public String getCname() {
 		return cname;
 	}

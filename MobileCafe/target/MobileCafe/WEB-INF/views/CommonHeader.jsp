@@ -38,7 +38,6 @@ input[type=text]:focus {
  <button type="button" style="background-color:#000000; color:#FFFFFF" class="btn btn-default btn-xs" >Login</button></a>
  <a href="Register">
  <button type="button" style="background-color:#000000; color:#FFFFFF" class="btn btn-default btn-xs" >Register</button></a>      
-  
 <a class="fa fa-facebook-square"style="font-size:25px;color:black"  href="https://www.facebook.com" target="_blank"></a>
 <a href="https://twitter.com/" style="font-size:25px;color:black"  class="fa fa-twitter" target="_blank"></a> 
 <a href="https://www.google.com/"  style="font-size:25px;color:black" class="fa fa-google-plus-square" target="_blank"></a>
@@ -46,7 +45,6 @@ input[type=text]:focus {
 </div>
 <div align="right">
 <input align= style="input" type="text" name="search" placeholder="Search..">
-
 </div>
 <br/>
 </div>	

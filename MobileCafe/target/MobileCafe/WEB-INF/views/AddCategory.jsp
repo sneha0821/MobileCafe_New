@@ -3,18 +3,25 @@
 
 <jsp:include page="Admin.jsp"></jsp:include>
 
+<div align="Center">
+<h3>Add a Category</h3>
+<br/><br/>
 <form:form action="AddCategory" method="POST" commandName="Category">
 
-  Category ID:<form:input path="cid" />
+  <Label>Category ID:</Label><form:input path="cid" />
+ 
   <br/>
-  <br/>
-  Category Name:<form:input path="cname" />
+  
+  <Label>Category Name:</Label><form:input path="cname" />
+ 
   <br/>
  <br/>
-  Category Description:<form:textarea path="cdesc" />
+
+  <Label>Category Description:</Label><form:textarea path="cdesc" />
+
  <br>
 <br/>
 	<input type="Submit" value="Add"/>
 </form:form>
-
+</div>
 <jsp:include page="CommonFooter.jsp"></jsp:include>

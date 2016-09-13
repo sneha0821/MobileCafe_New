@@ -1,12 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<jsp:include page="Admin.jsp"></jsp:include>
+<div class="bg-content">
+  <div class="container">
+      <div class="span12" style="text-align: justify; font-size: medium; font-family: Script MT Bold; color:silver;">
+<h1>Edit a Product</h1>
+<form:form action="EditProduct" method="POST" commandName="EditProduct1">
 
-</body>
-</html>
+  <fieldset>
+      <legend style="text-align: justify; font-size: medium; font-family: Script MT Bold; color:silver;"></legend>
+      <p>
+      	<label>Product Id:</label>
+         <form:input type="text" path="pid" readonly="true"/>
+      </p>
+
+       <p><label for="year" style="text-align: justify; font-size: medium; font-family: Script MT Bold; color:silver;">Product Quantity</label>
+         <form:input type="text" path="pquan"/>
+      </p>
+       <p><label for="year" style="text-align: justify; font-size: medium; font-family: Script MT Bold; color:silver;">Product Price:</label>
+         <form:input type="text" path="pcost"/>
+      </p>
+
+      <p><input type="submit" value="Update Product"/></p>
+    </fieldset>
+  </form:form>  
+  </div>
+  </div>
+  </div>    
+
+<jsp:include page="CommonFooter.jsp"></jsp:include>
