@@ -61,9 +61,8 @@ public class SellerController
 	
 	
 	@RequestMapping(value="/EditSeller",method=RequestMethod.GET)
-	public ModelAndView editseller(@RequestParam("id")String sid,Model m) 
+	public ModelAndView editseller(@RequestParam("id")int sid,Model m) 
 	{
-		//ModelAndView mv=new ModelAndView("editcatagory","catagory",new Catagory());
 		Seller s=sdao.showSeller(sid);
 		m.addAttribute("EditSeller1",s);
 		ModelAndView mv=new ModelAndView("EditSeller","EditSeller",new Seller());
@@ -84,7 +83,7 @@ public class SellerController
 	}
 
 	@RequestMapping(value="/delSeller",method=RequestMethod.GET)
-	public ModelAndView DeleteCatagory(@RequestParam("id")String sid,Model m)
+	public ModelAndView DeleteCatagory(@RequestParam("id")int sid,Model m)
 	{
 		sdao.deleteSeller(sid);
 		m.addAttribute("list",getdata());

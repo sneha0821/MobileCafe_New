@@ -1,10 +1,13 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <jsp:include page="CommonHeader.jsp"></jsp:include>
 <br/>
 <div align="center">
-<img  src="resources/eleventh.jpg" width="500" height="200"/>
+<img  src="resources/eleventh.jpg" class="img-responsive" width="500" height="200"/>
 </div>
-<div class="container" style="margin-top:40px">
+<div align="justify">
+<div align="center">
+
+<div class="container" style="margin-top:40px" ">
 		<div class="row">
 			<div class="col-sm-6 col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
@@ -16,8 +19,8 @@
 					<img src="resources/login1.png"/>
 					</div>
 					<div class="panel-body">
-						<form:form action="Login" method="POST" commandName="Login">
-							<form role="form" >
+						<form action="perform_login" method="post">
+							
 							<fieldset>
 								<div class="row">
 									<div class="center-block">
@@ -31,7 +34,7 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-user"></i>
 												</span> 
-												<form:input path="uname" class="form-control" placeholder="Username" name="loginname" type="text"/>
+												<input  class="form-control" placeholder="Username" required id="username" name="username" type="text" pattern=".{5,10}" title="minimum length for username is 5"/>
 											</div>
 										</div>
 										<div class="form-group">
@@ -39,7 +42,7 @@
 												<span class="input-group-addon">
 													<i class="glyphicon glyphicon-lock"></i>
 												</span>
-												<form:input path="pwd" class="form-control" placeholder="Password" name="password" type="password" value=""/>
+												<input class="form-control" placeholder="Password" required name="password" type="password" title="Enter Valid credentials"/>
 											</div>
 										</div>
 										<div class="form-group">
@@ -48,14 +51,18 @@
 									</div>
 								</div>
 							</fieldset>
-							</form>
-						</form:form>
+							
+					</div>
 					</div>
 					<div class="panel-footer ">
-						Don't have an account! <a href="#" onClick=""> Sign Up Here </a>
+						Don't have an account! <a href="Register" onClick=""> Sign Up Here </a>
+						</br>
+						Forget Password!!<a href="forgotPassword" onClick="">Click here..</a>
 					</div>
+					
                 </div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<jsp:include page="CommonFooter.jsp"></jsp:include>

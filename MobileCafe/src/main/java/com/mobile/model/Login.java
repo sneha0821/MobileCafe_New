@@ -2,18 +2,22 @@ package com.mobile.model;
 
 public class Login
 {
-String uname;
+String name;
 String pwd;
+
 public Login()
 {
 
 }
-public String getUname() {
-	return uname;
+
+public String getName() {
+	return name;
 }
-public void setUname(String uname) {
-	this.uname = uname;
+
+public void setName(String name) {
+	this.name = name;
 }
+
 public String getPwd() {
 	return pwd;
 }

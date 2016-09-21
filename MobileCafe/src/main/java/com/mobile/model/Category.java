@@ -6,7 +6,8 @@ import javax.persistence.*;
 public class Category
 {
 	@Id
-	String cid;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	int cid;
 	@Column
 	String cname;
 	@Column
@@ -15,13 +16,19 @@ public class Category
 	{
 	}
 	
-	public String getCid() {
+	
+
+	public int getCid() {
 		return cid;
 	}
 
-	public void setCid(String cid) {
+
+
+	public void setCid(int cid) {
 		this.cid = cid;
 	}
+
+
 
 	public String getCname() {
 		return cname;

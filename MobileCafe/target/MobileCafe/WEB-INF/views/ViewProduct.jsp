@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <script>
   var prod = ${list};
@@ -17,30 +18,48 @@
     });
 </script>
 <jsp:include page="Admin.jsp"></jsp:include>
+<!-- <body background=" resources/admin1.jpg">-->
   <div class="container">
-  <form:form commandName="Product">
+  <form:form action="AddProduct" method="POST" commandName="Product">
 <div class="span12" style="text-align: justify; font-size: large; color:silver;">
  <div ng-app="showProduct" ng-controller="ProductController">
  <br/><br/>
- <div class="row">
 Search:<input type=text placeholder="Search" ng-model="searchText"/>
-</div>
-<div id="headin2"><strong> <h3>Product List </h3></strong></div>
-
-<table width=\"100%\" border=\"0\" id=\"tab\">
-<tr><th id=\"td1\">PRODUCT ID</th><th id=\"td2\">PRODUCT NAME</th>
-             <th id=\"td3\">PRODUT DESC</th><th id=\"td4\">CATEGORY ID</th><th id=\"td5\">SELLER ID</th><th id=\"td6\">PRODUCT IMAGE</th><th id=\"td7\">PRODUCT QUANTITY</th><th id=\"td8\">PRODUCT PRICE</th><th id=\"td9\">EDIT</th><th id=\"td10\">DELETE</th>
+<div id="headin2"><strong> <h3 align="center">Product List </h3></strong></div>
+<div align="center">
+<table bgcolor="#00FF00" width=\"100%\" border=\"0\" id=\"tab\" >
+<tr>         <th bgcolor="white" id=\"td1\">PRODUCT ID</th>
+			 <th bgcolor="white" id=\"td2\">PRODUCT NAME</th>
+             <th id=\"td3\" bgcolor="white">PRODUT DESC</th>
+             <th bgcolor="white" id=\"td4\">CATEGORY ID</th>
+             <th bgcolor="white" id=\"td5\">SELLER ID</th>
+             <th bgcolor="white" id=\"td6\">PRODUCT IMAGE</th>
+             <th bgcolor="white" id=\"td7\">PRODUCT QUANTITY</th>
+             <th bgcolor="white" id=\"td8\">PRODUCT PRICE</th>
+             <th bgcolor="white" id=\"td9\">EDIT</th>
+             <th bgcolor="white" id=\"td10\">DELETE</th>
  </tr>
  <tr class="success" ng-repeat="prod in Product|filter:searchText">
 
- <td>{{prod.pid}}</td><td>{{prod.pname}}</td><td>{{prod.pdesc}}</td><td>{{prod.cid}}</td><td>{{prod.sid}}</td>
- <td><img src="resources/{{prod.pid}}.jpg" height="40"  width="40" align="middle"/></td><td>{{prod.pquan}}</td><td>{{prod.pcost}}</td>
- <td><a href="EditProduct?id={{pid=prod.pid}}">Edit</a></td>
- <td><a href="delProduct?id={{pid=prod.pid}}">Delete</a></td>
+ 	<td bgcolor="white">{{prod.pid}}</td>
+ 	<td bgcolor="white">{{prod.pname}}</td>
+ 	<td bgcolor="white">{{prod.pdesc}}</td>
+ 	<td bgcolor="white">{{prod.cid}}</td>
+ 	<td bgcolor="white">{{prod.sid}}</td>
+ 	<!-- <td bgcolor="white"><img src="resources/{{prod.pid}}.jpg" height="40" width="40" align="middle"/></td>-->
+ <td bgcolor="white"><img src="resources/{{prod.pid}}.jpg" height="30" width="30" align="middle"></img></td>
+ 	
+    <td bgcolor="white">{{prod.pquan}}</td><td bgcolor="white">{{prod.pcost}}</td>
+ 	<td bgcolor="white"><a href="EditProduct?id={{pid=prod.pid}}">Edit</a></td>
+ 	<td bgcolor="white"><a href="delProduct?id={{pid=prod.pid}}">Delete</a></td>
+ 
+ </tr>
  </table>
+ </div>
  </div>
  </div>
  </form:form>
  
+</div>
 
 <jsp:include page="CommonFooter.jsp"></jsp:include>

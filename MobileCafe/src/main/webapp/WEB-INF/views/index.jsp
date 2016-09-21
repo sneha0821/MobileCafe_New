@@ -1,9 +1,9 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <title>Mobile Cafe</title>
 </head>
-<body style="background-color:#D3D3D3;">
 <jsp:include page="CommonHeader.jsp"/>
 
 
@@ -21,19 +21,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" align="center">
       <div class="item active">
-        <img src="./resources/first.jpg"  >
+        <img src="./resources/first.jpg"  class="img-responsive"  >
       </div>
 
       <div class="item">
-        <img src="./resources/second.jpg"  >
+        <img src="./resources/second.jpg"  class="img-responsive" >
       </div>
     
       <div class="item">
-        <img src="./resources/third.jpg"  >
+        <img src="./resources/third.jpg"  class="img-responsive" >
       </div>
 
       <div class="item">
-        <img src="./resources/fourth.jpg" >
+        <img src="./resources/fourth.jpg"  class="img-responsive">
       </div>
     </div>
 
@@ -49,35 +49,35 @@
   </div>
 </div>
 <div class="container">
-<h5 align="left">TOP TRENDING</h5>
+<h4 align="left"><font color="ffffff">TOP TRENDING</font></h4>
   
  
   <div class="row">
     <div class="col-sm-4">
-      <a href="resources/Apple.PNG" class="thumbnail">
-        <p>Apple Iphone 5S 16GB</p>
-        <img src="./resources/fifth.jpg" alt="Pulpit Rock" style="width:230px;height:215px">
+      <a href="ProductDescription?id=101" class="thumbnail">
+        <p>Samsung Galaxy J2(2016)</p>
+        <img src="./resources/101.jpg" alt="Pulpit Rock" style="width:230px;height:215px">
     
       </a>
     </div>
     <div class="col-sm-4">
-      <a href="resources/samsung.PNG" class="thumbnail">
-        <p>Samsung Galaxy J 2 (BLACK)</p>
-        <img src="./resources/sixth.jpg" alt="Moustiers Sainte Marie" style="width:230px;height:215px">
+      <a href="ProductDescription?id=104" class="thumbnail">
+        <p>Microsoft Lumia 640 XL</p>
+        <img src="./resources/104.jpg" alt="Moustiers Sainte Marie" style="width:230px;height:215px">
    
       </a>
     </div>
     <div class="col-sm-4">
-      <a href="resources/samsung2.PNG" class="thumbnail">
-        <p>Samsung Galaxy S7 Edge (32 GB)</p>
-        <img src="./resources/seventh.jpg" alt="Cinque Terre" style="width:230px;height:215px">
+      <a href="ProductDescription?id=106" class="thumbnail">
+        <p>AsusZenFone(Laser 16GB)</p>
+        <img src="./resources/106.jpg" alt="Cinque Terre" style="width:230px;height:215px">
           
       </a>
     </div>
   </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
 <h5 align="left">COMING SOON!!!</h5>
   
  
@@ -103,7 +103,7 @@
   </div>
 </div>
 
-
+ -->
 
 <br/><br/>
 <jsp:include page="CommonFooter.jsp"></jsp:include>
@@ -111,5 +111,3 @@
 
 
 
-</body>
-</html>

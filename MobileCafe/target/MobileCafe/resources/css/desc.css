@@ -1,0 +1,103 @@
+Bootsnipp
+About
+Tools 
+Snippets 
+Register
+Login
+
+"Responsive Shopping Cart"
+Bootstrap 3.2.0 Snippet by asanti82
+3.2.0 responsive shop ecommerce shop responsive
+
+ 
+PreviewHTMLCSS    Fork this  59.3K   100 Fav  
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+        width:20%;
+        display: inline !important;
+    }
+    .actions .btn{
+        width:36%;
+        margin:1.5em 0;
+    }
+    
+    .actions .btn-info{
+        float:left;
+    }
+    .actions .btn-danger{
+        float:right;
+    }
+    
+    table#cart thead { display: none; }
+    table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+    table#cart tbody tr td:first-child { background: #333; color: #fff; }
+    table#cart tbody td:before {
+        content: attr(data-th); font-weight: bold;
+        display: inline-block; width: 8rem;
+    }
+    
+    
+    
+    table#cart tfoot td{display:block; }
+Get the context and insights to defeat all application errors.
+Similar snippets: See More
+62.4K  132 
+Shopping Cart BS 3
+
+ Shopping Cart BS 3
+2.8K  1 
+Shopping Cart
+
+
+602  0 
+Shopping Cart BS 3
+
+
+51.7K  158 
+Shopping Cart Panel BS 3
+
+ Shopping Cart Panel BS 3
+
+  
+Comments:
+
+ 
+ 
+ Follow @bootsnipp  Tweet
+Bootsnipp.com © 2015 Dan's Tools | Site Privacy policy | Advertise | Featured snippets are MIT license.

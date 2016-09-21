@@ -24,7 +24,6 @@ input[type=text]:focus {
 </style>
 </head>
 
-<body background="#FFD700">
 
   <div class="container">
   <div>
@@ -32,14 +31,12 @@ input[type=text]:focus {
 </div>
 <div class="row" align="right">
     
- <a href="Login">
- <button type="button" style="background-color:#000000; color:#FFFFFF" class="btn btn-default btn-xs" >Login</button></a>
- <a href="Register">
- <button type="button" style="background-color:#000000; color:#FFFFFF" class="btn btn-default btn-xs" >Register</button></a>      
-  
-<a class="fa fa-facebook-square"style="font-size:25px;color:black"  href="https://www.facebook.com" target="_blank"></a>
-<a href="https://twitter.com/" style="font-size:25px;color:black"  class="fa fa-twitter" target="_blank"></a> 
-<a href="https://www.google.com/"  style="font-size:25px;color:black" class="fa fa-google-plus-square" target="_blank"></a>
+ 
+  <a href="perform_logout">
+ <link style><h5 style="color:white">LogOut</h5></link></a>
+<a class="fa fa-facebook-square"style="font-size:25px;color:white"  href="https://www.facebook.com" target="_blank"></a>
+<a href="https://twitter.com/" style="font-size:25px;color:white"  class="fa fa-twitter" target="_blank"></a> 
+<a href="https://www.google.com/"  style="font-size:25px;color:white" class="fa fa-google-plus-square" target="_blank"></a>
 <img align="left" src="resources/mobilecafe.PNG" width="350" height="100"/>
 </div>
 <div align="right">
@@ -57,7 +54,7 @@ input[type=text]:focus {
 </div>
   </div>
   
-
+<body background=" resources/admin1.jpg">
 			
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -85,20 +82,16 @@ input[type=text]:focus {
         </ul>
       </li>
       
- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">UserInfo <span class="caret"></span></a>
+<!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">UserInfo <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">View</a></li>
         </ul>
-      </li>
+      </li> -->
   
   </div>
 </nav>
 <div align="center">
-    <img  src="resources/eleventh.jpg" width="500" height="200"/>
+    <img  src="resources/eleventh.jpg" class="img-responsive" width="500" height="200"/>
     </div>
     <br/><br/><br/>	
 </div>
-</body>
-</html>
-
-

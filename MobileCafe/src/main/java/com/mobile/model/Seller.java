@@ -5,31 +5,27 @@ import javax.persistence.*;
 public class Seller 
 {
 	@Id
-	String sid;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int sid;
 	@Column
-	String sname;
+    private	String sname;
 	@Column
-	String semailid;
+	private String semailid;
 	@Column
-	String smobno;
-	public String getSid() {
-		return sid;
-	}
+	private String smobno;
 	
 public Seller()
 {
 
 }
-	public Seller(String sid, String sname, String semailid, String smobno) {
-		
-		this.sid = sid;
-		this.sname = sname;
-		this.semailid = semailid;
-		this.smobno = smobno;
+	public int getSid() {
+	return sid;
 	}
-	public void setSid(String sid) {
+
+	public void setSid(int sid) {
 		this.sid = sid;
 	}
+
 	public String getSname() {
 		return sname;
 	}

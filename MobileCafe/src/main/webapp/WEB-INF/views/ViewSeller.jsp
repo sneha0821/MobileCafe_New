@@ -21,19 +21,19 @@
  <div class="row">
 Search:<input type=text placeholder="Search" ng-model="searchText"/>
 </div>
-<div id="headin2"><strong> <h3>Seller Details </h3></strong></div>
-
+<div id="headin2"><strong> <h3 align="center">Seller Details </h3></strong></div>
+<div align="center">
 <table width=\"100%\" border=	\"0\" id=\"tab\">
-<tr><th id=\"td1\">SELLER ID</th><th id=\"td2\">SELLER NAME</th>
-              <th id=\"td3\">SELLER EMAILID</th><th id=\"td5\">SELLER MOB NUM</th><th id=\"td5\">EDIT</th><th id=\"td5\">DELETE</th>
+<tr><th  bgcolor="#cccccc" id=\"td1\">SELLER ID</th><th  bgcolor="#cccccc" id=\"td2\">SELLER NAME</th>
+              <th  bgcolor="#cccccc" id=\"td3\">SELLER EMAILID</th><th  bgcolor="#cccccc" id=\"td5\">SELLER MOB NUM</th><th  bgcolor="#cccccc" id=\"td5\">EDIT</th><th  bgcolor="#cccccc" id=\"td5\">DELETE</th>
  </tr>
  <tr class="success" ng-repeat="sel in Seller|filter:searchText">
- <td>{{sel.sid}}</td><td>{{sel.sname}}</td><td>{{sel.semailid}}</td><td>{{sel.smobno}}</td>
- <td><a href="EditSeller?id={{sel.sid}}" name="edit" value="Edit">Edit</a></td>
-<td><a href="delSeller?id={{sel.sid}}" value="Delete" name="delete" >Delete</a>]</td></tr>
+ <td bgcolor="white">{{sel.sid}}</td><td  bgcolor="white">{{sel.sname}}</td><td  bgcolor="white">{{sel.semailid}}</td><td  bgcolor="white">{{sel.smobno}}</td>
+ <td  bgcolor="white"><a href="EditSeller?id={{sel.sid}}" name="edit" value="Edit">Edit</a></td>
+<td  bgcolor="white"><a href="delSeller?id={{sel.sid}}" value="Delete" name="delete" >Delete</a>]</td></tr>
 </table>
 </div>
 </div>
 </div>
-
+</div>
 <jsp:include page="CommonFooter.jsp"></jsp:include>

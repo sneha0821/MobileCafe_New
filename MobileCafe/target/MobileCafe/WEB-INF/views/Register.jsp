@@ -1,94 +1,212 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<jsp:include page="CommonHeader.jsp"></jsp:include>
-<div align="center">
-<img  src="resources/eleventh.jpg" width="500" height="200"/>
-</div>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+
 <script type="text/javascript">
-    function Validate() {
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("password_confirmation").value;
-        if (password != confirmPassword) {
-            alert("Passwords do not match.");
-            return false;
-        }
-        return true;
+window.alert = function(){};
+var defaultCSS = document.getElementById('bootstrap-css');
+function changeCSS(css){
+    if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+    else $('head > link').filter(':first').replaceWith(defaultCSS); 
+}
+$( document ).ready(function() {
+  var iframe_height = parseInt($('html').height()); 
+  window.parent.postMessage( iframe_height, 'http://bootsnipp.com');
+});
+
+
+    function validate()
+    {
+    	alert("welcome");
+    	var pwd=document.getElementById("pwd");
+    	var cpwd=document.getElementById("pwd");
+    	if(pwd==cpwd)
+    		{
+    		return true;
+    		}
+    	else
+    		{
+    		alert("Password does not match");
+    		    		return false;
+    		}
     }
-</script>
-<br/>
-<div class="container" style="margin-top:80px" margin-bottom="100px">
+    </script>j
+		
+		<title>Register Form</title>
 
-<div class="row">
-<div class="span12">	
-        <div class="col-xs-12 col-sm-10 col-md-5 col-sm-offset-2 col-md-offset-4">
-        	<div class="panel panel-default">
-        		<div class="panel-heading">
-			    		<h3 class="panel-title">Please sign up <small>It's free!</small></h3>
-			 			</div>
-			 			<div class="panel-body">
-			 			<form:form action="Register" method="GET" commandName="Register">
-			    		<form role="form" >
-			    		<div class="row">
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			          Name:      <form:input type="text" path="name"/>
-			    					</div>
-			    				</div>
-			    				</div>
-			    			
-			    				<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    				UserName:		<form:input type="text" path="uname"/>
-			    					</div>
-			    				</div>
-			    				</div>
-			    			
-								<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    					Mobile Num:	<form:input type="text" path="mobno" pattern="[0-9]"   />
-			    					</div>
-			    				</div>
-			    				
-			    				</div>
-			    				
-			    				</div>
-			    				</div>
-			    			
-			    			<div class="form-group">
-			    				Email Id:<form:input type="email" path="email" />
-			    			</div>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
 
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						Password:<form:input pattern=".{5,10}" path="pwd"  min="5" max="10" />
-			    					</div>
-			    				</div>
-			    				
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    					Confirm Password:<form:input height="40"  width="60" pattern=".{5,10}" path="cpwd" title="5 to 10 characters"  />
-			    					</div>
-			    				</div>
-			    			
-			    		
-			    			<input onclick="return Validate()" style="background-color:#000000" type="submit" value="Register" class="btn btn-info btn-block"/>
-			    			</form>
-			    			</form:form>
-			    			
-			    			
-			    		
-			    	
-			    	
-			    	</div>
-			    	</div>
-			    	</div>
-	    		</div>
-	    		
-    		</div>
-    		
+    <title>Register Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+   
+   <!--body-->
+html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
 
-    		<br/>
-        	<jsp:include page="CommonFooter.jsp"></jsp:include>
+.main{
+ 	margin-top: 70px;
+}
+
+
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+    </style>
+ 
+		<jsp:include page="CommonHeader.jsp"></jsp:include>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h3><u><font color="white">Register Here...Its Free!!!</font></u></h3>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form:form action="Register" commandName="Register" method="POST" onsubmit="return validate">
+						
+						<div class="form-group">
+							<label >Enter your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<form:input type="text" class="form-control" name="name" id="name"  placeholder="Name" path="name" />
+								</div>
+							</div>
+						</div>
+							
+							<div class="form-group">
+							<label>Enter your Username<label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<form:input type="text" class="form-control" name="uname" id="uname"  placeholder="User Name" path="username" min="6" max="16"/>
+								</div>
+							</div>
+						</div>						
+
+						<div class="form-group">
+							<label >Enter your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<form:input type="text" class="form-control" name="email" id="email"  placeholder="Email ID" path="email" />
+								</div>
+							</div>
+						</div>
+                           	<div class="form-group">
+							<label >Enter Mobile Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<form:input type="text" class="form-control" name="mobno" id="mobno"  placeholder=" Mobile No" path="mobno"/>
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group">
+							<label >Enter Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<form:input type="password" class="form-control" name="pwd" id="pwd"  placeholder=" Password" path="password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label >Enter Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="last_name" id="cpwd"  placeholder=" Confirm Password " path="password"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label >Contact Address</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<form:input type="textarea" class="form-control" name="last_name" id="lname"  placeholder="Contact Address	" path="addrs"/>
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="form-group ">
+							<form:button style="background-color:#000000" type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</form:button>
+						</div>
+						<div class="login-register">
+				            <a href="login.jsp">Login</a>
+				         </div>
+					</form:form>
+				</div>
+			</div>
+		</div>

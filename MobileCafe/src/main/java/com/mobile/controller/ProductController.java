@@ -60,7 +60,7 @@ public class ProductController
 		System.out.println(prdt.getPid());
 		pdao.addProduct(prdt);
 	
-		String path="D:\\Chandru\\MobileCafe\\src\\main\\webapp\\myfiles\\";
+		String path="D:\\Chandru\\MobileCafe\\src\\main\\webapp\\resources\\images\\";
 		path=path+String.valueOf(prdt.getPid())+".jpg";
 		System.out.println(path);
 		File f=new File(path);
@@ -98,19 +98,56 @@ public class ProductController
 	@RequestMapping(value="/ViewProduct",method=RequestMethod.GET)
 	public ModelAndView viewProduct1(Model m)
 	{
-	
 		m.addAttribute("list",getdata());
 		ModelAndView mv=new ModelAndView("ViewProduct","Product",new Product());
 		return mv;
 	}
 	
+	@RequestMapping(value="/FullProduct",method=RequestMethod.GET)
+	public String userview(Model m)
+	{
+		System.out.println("Hello");
+		System.out.println(getdata());
+		m.addAttribute("list",getdata());
+		return "FullProduct";
+	}
+	
+
+	@RequestMapping(value="/ProductDescription",method=RequestMethod.GET)
+	public ModelAndView viewdescrp(@RequestParam("id")int pid,Model m)
+	{
+		System.out.println("Hello");
+		//System.out.println(pid);
+		Product p=pdao.showProduct(pid);
+		Gson gson = new Gson();
+		String list=gson.toJson(p);
+		m.addAttribute("list1",list);
+	    ModelAndView mv=new ModelAndView("ProductDescription","Product",new Product());
+		return mv;
+		//	System.out.println(getdata());
+		
+	}
+	
+
+	@RequestMapping(value="/AddToCart",method=RequestMethod.GET)
+	public ModelAndView addtocart(@RequestParam("addpid")int pid,Model m)
+	{
+		System.out.println("Hello");
+		//System.out.println(pid);
+		Product p=pdao.showProduct(pid);
+		Gson gson = new Gson();
+		String list=gson.toJson(p);
+		m.addAttribute("list1",list);
+	    ModelAndView mv=new ModelAndView("AddToCart","Product",new Product());
+		return mv;
+		//	System.out.println(getdata());
+		
+	}
 	
 	@RequestMapping(value="/EditProduct",method=RequestMethod.GET)
-	public ModelAndView editproduct(@RequestParam("id")String pid,Model m) 
+	public ModelAndView editproduct(@RequestParam("id")int pid,Model m) 
 	{
-	//ModelAndView mv=new ModelAndView("editcatagory","catagory",new Catagory());
 		Product p=pdao.showProduct(pid);
-	
 		m.addAttribute("EditProduct1",p);
 		ModelAndView mv=new ModelAndView("EditProduct","EditProduct",new Product());
 		return mv;
@@ -129,7 +166,7 @@ public class ProductController
 	}
 
 	@RequestMapping(value="/delProduct",method=RequestMethod.GET)
-	public ModelAndView DeleteProduct(@RequestParam("id")String pid,Model m)
+	public ModelAndView DeleteProduct(@RequestParam("id")int pid,Model m)
 	
 	{
 		pdao.deleteProduct(pid);

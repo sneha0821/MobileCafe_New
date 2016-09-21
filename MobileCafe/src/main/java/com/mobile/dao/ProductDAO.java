@@ -55,7 +55,7 @@ public class ProductDAO
 		return showprod;
 	}
 	
-	public Product showProduct(String showprod)
+	public Product showProduct(int showprod)
 	{
 		Session session = sessionFactory.openSession();
 	      Transaction tx = session.getTransaction();
@@ -89,28 +89,20 @@ public class ProductDAO
 	
 	public void editProduct(Product editprod)
 	{
-		System.out.println("0");
+		
 		Session s=sessionFactory.openSession();
-		System.out.println("1");
-		Transaction tx=s.getTransaction();
-		System.out.println("2");
+	    Transaction tx=s.getTransaction();
 		tx.begin();
-		System.out.println("3");
-		   Product p=(Product)s.get(Product.class,editprod.getPid());
-		   System.out.println("4");
-		   p.setPquan(editprod.getPquan());
-		   System.out.println("5");
-		   p.setPcost(editprod.getPcost());
-		   System.out.println("6");
-		   //need to add some more code
-			s.update(p);
-			System.out.println("7");
+		Product p=(Product)s.get(Product.class,editprod.getPid());
+		p.setPquan(editprod.getPquan());
+		p.setPcost(editprod.getPcost());
+		s.update(p);
 		tx.commit();
 		System.out.println("8");
 		s.close();
 		
 	}
-	public void deleteProduct(String delprodid)
+	public void deleteProduct(int delprodid)
 	{
 		System.out.println("0");
 		Session session = sessionFactory.openSession();
